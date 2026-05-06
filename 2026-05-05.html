@@ -142,31 +142,10 @@
   .arch-link:hover { background: #2c1810; color: #f5f0e8; }
 
   /* Tab filtering — story shows iff its data-tabs contains the active tab */
-  body[data-tab="all"] article.story { display: flex; }
-  body[data-tab="headlines"] article.story[data-tabs~="headlines"] { display: flex; }
-  body[data-tab="headlines"] article.story:not([data-tabs~="headlines"]) { display: none; }
-  body[data-tab="business"] article.story[data-tabs~="business"] { display: flex; }
-  body[data-tab="business"] article.story:not([data-tabs~="business"]) { display: none; }
-  body[data-tab="mumbai"] article.story[data-tabs~="mumbai"] { display: flex; }
-  body[data-tab="mumbai"] article.story:not([data-tabs~="mumbai"]) { display: none; }
-  body[data-tab="world"] article.story[data-tabs~="world"] { display: flex; }
-  body[data-tab="world"] article.story:not([data-tabs~="world"]) { display: none; }
-  body[data-tab="sbi"] article.story[data-tabs~="sbi"] { display: flex; }
-  body[data-tab="sbi"] article.story:not([data-tabs~="sbi"]) { display: none; }
-  body[data-tab="banking"] article.story[data-tabs~="banking"] { display: flex; }
-  body[data-tab="banking"] article.story:not([data-tabs~="banking"]) { display: none; }
-  body[data-tab="fintech"] article.story[data-tabs~="fintech"] { display: flex; }
-  body[data-tab="fintech"] article.story:not([data-tabs~="fintech"]) { display: none; }
-  body[data-tab="events"] article.story { display: none; }
 
   /* Section headers and hero only in All view */
-  body:not([data-tab="all"]) .sec-head { display: none; }
-  body:not([data-tab="all"]) .hero-section { display: contents; }
-  body:not([data-tab="all"]) .empty { display: none; }
 
   /* Events section visibility */
-  body:not([data-tab="all"]):not([data-tab="events"]) section[data-section="events"] { display: none; }
-  body[data-tab="events"] section[data-section="events"] { display: block; }
 
   @media (max-width: 600px) {
     .tab-btn { padding: 6px 10px; font-size: 10px; letter-spacing: 0.5px; }
@@ -983,8 +962,12 @@
       e.preventDefault();
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      document.body.dataset.tab = btn.dataset.tab;
-      window.scrollTo({top: 0, behavior: 'smooth'});
+      const target = document.querySelector(btn.getAttribute('href'));
+      if (target) {
+        const offset = 60;
+        const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({top: y, behavior: 'smooth'});
+      }
     });
   });
   document.querySelector('.tab-btn[data-tab="all"]').classList.add('active');
