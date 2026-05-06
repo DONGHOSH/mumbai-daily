@@ -135,10 +135,19 @@
     .tab-btn { padding: 6px 10px; font-size: 10px; letter-spacing: 0.5px; }
     .src-pills { font-size: 9px; }
   }
+
+  #back-to-top {
+    display: none; position: fixed; bottom: 24px; right: 24px; z-index: 1000;
+    width: 44px; height: 44px; border-radius: 50%; border: none;
+    background: #2c4a6b; color: #fff; font-size: 22px; cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  }
+  #back-to-top:hover { background: #1a3a5c; }
 </style>
 </head>
 <body data-tab="all">
 <div class="paper">
+<button id="back-to-top" title="Back to top">&#8679;</button>
 
   <div class="masthead">
     <div class="masthead-bar"></div>
@@ -157,7 +166,7 @@
   <noscript><div style="background:#fff8e7;padding:8px 14px;text-align:center;font-family:Arial,sans-serif;font-size:11px;color:#6b4400;border-bottom:1px solid #e0c97a">For interactive tabs and impact toggles, open in a browser. Showing all sections expanded.</div></noscript>
 
   <nav class="tabs"><a class="tab-btn" data-tab="all" href="#sec-all">All</a><a class="tab-btn" data-tab="headlines" href="#sec-headlines">Headlines</a><a class="tab-btn" data-tab="business" href="#sec-business">Business</a><a class="tab-btn" data-tab="mumbai" href="#sec-mumbai">Mumbai</a><a class="tab-btn" data-tab="world" href="#sec-world">World</a><a class="tab-btn" data-tab="sbi" href="#sec-sbi">SBI</a><a class="tab-btn" data-tab="banking" href="#sec-banking">Banking</a><a class="tab-btn" data-tab="fintech" href="#sec-fintech">Fintech</a><a class="tab-btn" data-tab="events" href="#sec-events">Events</a></nav>
-  <div class="archive-nav"><a class="arch-link" href="index.html" style="background:#2c1810;color:#f5f0e8;border-color:#2c1810">Latest Edition →</a></div>
+  <div class="archive-nav"><a class="arch-link" href="index.html" style="background:#2c1810;color:#f5f0e8;border-color:#2c1810">Latest Edition →</a><span class="arch-label">Older Editions:</span><a class="arch-link" href="2026-05-05.html">05 May</a><a class="arch-link" href="2026-05-04.html">04 May</a><a class="arch-link" href="2026-05-03.html">03 May</a><a class="arch-link" href="2026-05-02.html">02 May</a><a class="arch-link" href="2026-05-01.html">01 May</a><a class="arch-link" href="2026-04-30.html">30 Apr</a><a class="arch-link" href="2026-04-28.html">28 Apr</a><a class="arch-link" href="2026-04-27.html">27 Apr</a></div>
 
   <div class="legend">
     <span style="color:#1a5c3a;font-weight:700">▲ Positive</span>
@@ -1059,6 +1068,15 @@
     document.querySelectorAll('.impact-panel').forEach(p => p.hidden = true);
     document.querySelectorAll('.ev-planner').forEach(p => p.hidden = true);
   }
+
+  
+  var btt = document.getElementById('back-to-top');
+  window.addEventListener('scroll', function() {
+    btt.style.display = window.scrollY > 300 ? 'block' : 'none';
+  });
+  btt.addEventListener('click', function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
 
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
