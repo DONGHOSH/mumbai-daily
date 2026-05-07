@@ -125,32 +125,21 @@
   footer { text-align: center; padding: 20px; border-top: 3px double #2c1810; margin-top: 30px;
     font-family: Arial, sans-serif; font-size: 10px; color: #6b5c44; }
 
-  /* Tab filtering — story shows iff its data-tabs contains the active tab */
-  body[data-tab="all"] article.story { display: flex; }
-  body[data-tab="headlines"] article.story[data-tabs~="headlines"] { display: flex; }
-  body[data-tab="headlines"] article.story:not([data-tabs~="headlines"]) { display: none; }
-  body[data-tab="business"] article.story[data-tabs~="business"] { display: flex; }
-  body[data-tab="business"] article.story:not([data-tabs~="business"]) { display: none; }
-  body[data-tab="mumbai"] article.story[data-tabs~="mumbai"] { display: flex; }
-  body[data-tab="mumbai"] article.story:not([data-tabs~="mumbai"]) { display: none; }
-  body[data-tab="world"] article.story[data-tabs~="world"] { display: flex; }
-  body[data-tab="world"] article.story:not([data-tabs~="world"]) { display: none; }
-  body[data-tab="sbi"] article.story[data-tabs~="sbi"] { display: flex; }
-  body[data-tab="sbi"] article.story:not([data-tabs~="sbi"]) { display: none; }
-  body[data-tab="banking"] article.story[data-tabs~="banking"] { display: flex; }
-  body[data-tab="banking"] article.story:not([data-tabs~="banking"]) { display: none; }
-  body[data-tab="fintech"] article.story[data-tabs~="fintech"] { display: flex; }
-  body[data-tab="fintech"] article.story:not([data-tabs~="fintech"]) { display: none; }
-  body[data-tab="events"] article.story { display: none; }
+  #back-to-top {
+    display: none; position: fixed; bottom: 22px; right: 18px; z-index: 999;
+    width: 42px; height: 42px; border-radius: 50%; background: #2c1810; color: #f5f0e8;
+    border: none; font-size: 20px; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+    line-height: 42px; text-align: center; padding: 0;
+  }
+  #back-to-top:hover { background: #1a3a5c; }
 
-  /* Section headers and hero only in All view */
-  body:not([data-tab="all"]) .sec-head { display: none; }
-  body:not([data-tab="all"]) .hero-section { display: contents; }
-  body:not([data-tab="all"]) .empty { display: none; }
-
-  /* Events section visibility */
-  body:not([data-tab="all"]):not([data-tab="events"]) section[data-section="events"] { display: none; }
-  body[data-tab="events"] section[data-section="events"] { display: block; }
+  .archive-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+    padding: 6px 14px; background: #ede8db; border-bottom: 1px solid #c8bfa8;
+    font-family: Arial, sans-serif; font-size: 10px; justify-content: center; }
+  .arch-label { font-weight: 700; letter-spacing: 1px; color: #6b5c44; text-transform: uppercase; margin-right: 4px; }
+  .arch-link { color: #2c1810; text-decoration: none; padding: 3px 8px;
+    border: 1px solid #c8bfa8; border-radius: 3px; background: #f5f0e8; }
+  .arch-link:hover { background: #2c1810; color: #f5f0e8; }
 
   @media (max-width: 600px) {
     .tab-btn { padding: 6px 10px; font-size: 10px; letter-spacing: 0.5px; }
@@ -158,15 +147,14 @@
   }
 </style>
 </head>
-<body data-tab="all">
+<body>
 <div class="paper">
+<button id="back-to-top" title="Back to top">&#8679;</button>
 
   <div class="masthead">
     <div class="masthead-bar"></div>
     <div class="masthead-meta">
       <span>Tuesday, 28 April 2026</span>
-      <span>SBI Corporate Centre Edition</span>
-      <span>Chief Manager · JV Business</span>
     </div>
     <div class="masthead-thin"></div>
     <h1 class="title">The Mumbai Daily</h1>
@@ -178,6 +166,7 @@
   <noscript><div style="background:#fff8e7;padding:8px 14px;text-align:center;font-family:Arial,sans-serif;font-size:11px;color:#6b4400;border-bottom:1px solid #e0c97a">For interactive tabs and impact toggles, open in a browser. Showing all sections expanded.</div></noscript>
 
   <nav class="tabs"><a class="tab-btn" data-tab="all" href="#sec-all">All</a><a class="tab-btn" data-tab="headlines" href="#sec-headlines">Headlines</a><a class="tab-btn" data-tab="business" href="#sec-business">Business</a><a class="tab-btn" data-tab="mumbai" href="#sec-mumbai">Mumbai</a><a class="tab-btn" data-tab="world" href="#sec-world">World</a><a class="tab-btn" data-tab="sbi" href="#sec-sbi">SBI</a><a class="tab-btn" data-tab="banking" href="#sec-banking">Banking</a><a class="tab-btn" data-tab="fintech" href="#sec-fintech">Fintech</a><a class="tab-btn" data-tab="events" href="#sec-events">Events</a></nav>
+  <div class="archive-nav"><a class="arch-link" href="index.html" style="background:#2c1810;color:#f5f0e8;border-color:#2c1810">Latest Edition →</a><span class="arch-label">Older Editions:</span><a class="arch-link" href="2026-05-06.html">06 May</a><a class="arch-link" href="2026-05-05.html">05 May</a><a class="arch-link" href="2026-05-04.html">04 May</a><a class="arch-link" href="2026-05-03.html">03 May</a><a class="arch-link" href="2026-05-02.html">02 May</a><a class="arch-link" href="2026-05-01.html">01 May</a><a class="arch-link" href="2026-04-30.html">30 Apr</a><a class="arch-link" href="2026-04-29.html">29 Apr</a><a class="arch-link" href="2026-04-27.html">27 Apr</a></div>
 
   <div class="legend">
     <span style="color:#1a5c3a;font-weight:700">▲ Positive</span>
@@ -1069,7 +1058,7 @@
 
   </main>
 
-  <footer>Personalised for Chief Manager · SBI Corporate Centre · JV Business — SBI Card &amp; SBI MF</footer>
+  <footer>The Mumbai Daily</footer>
 </div>
 
 <script>
@@ -1080,16 +1069,27 @@
     document.querySelectorAll('.ev-planner').forEach(p => p.hidden = true);
   }
 
+  var btt = document.getElementById('back-to-top');
+  window.addEventListener('scroll', function() {
+    btt.style.display = window.scrollY > 300 ? 'block' : 'none';
+  });
+  btt.addEventListener('click', function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      document.body.dataset.tab = btn.dataset.tab;
-      window.scrollTo({top: 0, behavior: 'smooth'});
+      const target = document.querySelector(btn.getAttribute('href'));
+      if (target) {
+        const offset = 60;
+        const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({top: y, behavior: 'smooth'});
+      }
     });
   });
-  document.querySelector('.tab-btn[data-tab="all"]').classList.add('active');
 
   document.querySelectorAll('.impact-toggle').forEach(btn => {
     btn.addEventListener('click', () => {
