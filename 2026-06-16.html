@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Mumbai Daily — Tuesday, 16 June 2026</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #d4c9b0; color: #2c1810; font-family: Georgia, 'Times New Roman', serif; line-height: 1.55; }
+  .paper { background: #f5f0e8; min-height: 100vh; padding-bottom: 60px; }
+
+  .masthead { border-bottom: 4px double #2c1810; padding: 16px 20px 12px; text-align: center; }
+  .masthead-bar { height: 3px; background: #2c1810; margin-bottom: 4px; }
+  .masthead-meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    font-family: Arial, sans-serif; font-size: 10px; color: #6b5c44; padding: 0 4px; }
+  .masthead-thin { height: 1px; background: #2c1810; margin: 4px 0; }
+  h1.title { font-family: Georgia, serif; font-size: clamp(28px, 6vw, 56px); font-weight: 700;
+    margin: 4px 0 2px; letter-spacing: 0.5px; color: #2c1810; }
+  .tagline { font-style: italic; font-size: 13px; color: #6b5c44; margin: 0 0 8px; }
+  .src-pills { display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+  .src-pill { font-family: Arial, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+    padding: 2px 8px; border: 1.5px solid; border-radius: 3px; text-transform: uppercase; }
+
+  .disclaimer { background: #fff8e7; border-bottom: 2px solid #e0c97a; padding: 10px 18px;
+    display: flex; gap: 10px; align-items: flex-start; font-family: Arial, sans-serif; font-size: 11px; color: #6b4400; }
+  .disclaimer button { background: none; border: none; color: #6b4400; font-size: 16px; cursor: pointer; }
+  .disclaimer-mini { text-align: center; padding: 6px; background: #fff8e7; cursor: pointer;
+    font-family: Arial, sans-serif; font-size: 10px; color: #8b5a00; border-bottom: 1px solid #e0c97a; }
+
+  .tabs { position: sticky; top: 0; z-index: 50;
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; padding: 10px;
+    background: #f5f0e8; border-bottom: 1px solid #c8bfa8; }
+  .tab-btn { font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; padding: 7px 14px; border: 1.5px solid #2c1810;
+    background: transparent; color: #2c1810; cursor: pointer; border-radius: 3px; transition: 0.15s;
+    text-decoration: none; display: inline-block; }
+  .tab-btn:hover { background: #e8dfc8; }
+  .tab-btn.active { background: #2c1810; color: #f5f0e8; }
+
+  .legend { display: flex; justify-content: center; gap: 16px; padding: 8px 14px; flex-wrap: wrap;
+    font-family: Arial, sans-serif; font-size: 11px; }
+  .legend-note { color: #9b8c74; font-style: italic; }
+
+  main { max-width: 1080px; margin: 0 auto; padding: 4px 16px 0; }
+
+  .sec-head { position: relative; text-align: center; margin: 30px 0 16px;
+    font-family: Georgia, serif; font-size: 11px; font-weight: 700; letter-spacing: 4px;
+    text-transform: uppercase; color: #2c1810; }
+  .sec-head::before, .sec-head::after { content: ''; position: absolute; top: 50%; width: 38%; height: 1px;
+    background: #c8bfa8; }
+  .sec-head::before { left: 0; }
+  .sec-head::after { right: 0; }
+  .sec-head span { display: inline-block; background: #f5f0e8; padding: 0 16px; position: relative; z-index: 1; }
+
+  .story-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1px;
+    background: #e0d8c4; border: 1px solid #e0d8c4; }
+  article.story { background: #fffdf7; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+  article.story.hero { padding: 22px 22px; grid-column: 1 / -1; background: #fffdf7; }
+
+  .tag-row { display: flex; gap: 5px; flex-wrap: wrap; min-height: 16px; }
+  .sec-tag { color: #f5f0e8; font-family: Arial, sans-serif; font-size: 9px; font-weight: 700;
+    letter-spacing: 1px; padding: 2px 7px; border-radius: 2px; text-transform: uppercase; }
+
+  .source-line { font-family: Arial, sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+  .card-headline { margin: 2px 0 4px; line-height: 1.25; font-family: Georgia, serif; font-weight: 700; font-size: 16px; }
+  article.story.hero .card-headline { font-size: 26px; }
+  .card-headline a { color: #2c1810; text-decoration: none; }
+  .card-headline a:hover { text-decoration: underline; color: #1a3a5c; }
+  .card-summary { font-family: Georgia, serif; font-size: 13px; color: #3d3328; margin: 0 0 4px; line-height: 1.6; }
+  article.story.hero .card-summary { font-size: 15px; }
+
+  .card-foot { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 6px; }
+  .impact-toggle { font-family: Arial, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; padding: 4px 10px; border: 1.5px solid; background: transparent;
+    cursor: pointer; border-radius: 3px; transition: 0.15s; }
+  .impact-toggle:hover { filter: brightness(0.92); }
+  .impact-toggle.open { background: currentColor; }
+  .impact-toggle.open span { color: #fff; }
+  .level-pill { font-family: Arial, sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 1.5px; }
+
+  .impact-panel { margin-top: 10px; padding-top: 10px; border-top: 1px dashed #c8bfa8; }
+  .impact-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+  .impact-label { font-family: Arial, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; color: #6b5c44; }
+  .impact-level { font-family: Arial, sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 1.5px; }
+  .bullets { display: flex; flex-direction: column; gap: 6px; }
+  .bullet { border-radius: 4px; padding: 7px 10px; border: 1px solid #e0d8c4; }
+  .bullet-head { display: flex; align-items: center; gap: 6px; margin-bottom: 3px; }
+  .bullet-icon { font-size: 10px; font-weight: 700; }
+  .bullet-who { font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; }
+  .bullet-effect { font-family: Georgia, serif; font-size: 12px; line-height: 1.55; color: #3d3328; }
+
+  .empty { text-align: center; padding: 24px; color: #888; font-style: italic; background: #fffdf7; }
+
+  .events-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 12px; padding: 0 0 12px; }
+  .event-card { background: #fffdf7; border: 1px solid #e0d8c4; border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; }
+  .ev-stripe { padding: 6px 12px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .ev-cat { color: #fff; font-family: Arial, sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 1.5px; }
+  .ev-urgency { color: #fff; font-family: Arial, sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 1px; padding: 3px 8px; border-radius: 10px; text-transform: uppercase; }
+  .ev-body { padding: 12px 14px; display: flex; flex-direction: column; gap: 7px; flex: 1; }
+  .ev-title { font-family: Georgia, serif; font-size: 15px; font-weight: 700; line-height: 1.3; color: #2c1810; }
+  .ev-meta { display: flex; flex-wrap: wrap; gap: 10px; font-family: Arial, sans-serif; font-size: 10px; color: #6b5c44; }
+  .ev-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .ev-stars .star-glyphs { color: #c47a1a; font-size: 12px; letter-spacing: 1px; }
+  .ev-stars .star-num { font-family: Arial, sans-serif; font-size: 10px; color: #6b5c44; margin-left: 4px; }
+  .ev-crowd { display: inline-flex; align-items: center; gap: 5px; }
+  .crowd-label { font-family: Arial, sans-serif; font-size: 8px; color: #9b8c74; letter-spacing: 1px; }
+  .crowd-bar { width: 50px; height: 4px; background: #e0d8c4; border-radius: 2px; overflow: hidden; }
+  .crowd-fill { height: 100%; }
+  .crowd-text { font-family: Arial, sans-serif; font-size: 9px; font-weight: 700; }
+  .ev-pricing { display: flex; justify-content: space-between; align-items: center; }
+  .ev-price { font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; color: #1a3a5c; }
+  .ev-source { font-family: Arial, sans-serif; font-size: 9px; color: #9b8c74; }
+  .ev-desc { font-family: Georgia, serif; font-size: 11px; line-height: 1.55; color: #3d3328; }
+  .ev-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .ev-tag { font-family: Arial, sans-serif; font-size: 9px; background: #f0ebe0; color: #6b5c44; padding: 2px 7px; border-radius: 8px; }
+  .ev-planner { background: #f0f7ff; border-left: 3px solid #1a3a5c; padding: 8px 10px; border-radius: 3px; }
+  .ev-planner-label { font-family: Arial, sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 1px; color: #1a3a5c; margin-bottom: 4px; }
+  .ev-planner > div:last-child { font-family: Georgia, serif; font-size: 11px; line-height: 1.55; color: #3d3328; }
+  .ev-foot { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 4px; }
+  .ev-toggle { font-family: Arial, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.5px; padding: 4px 10px; border: 1.5px solid; background: transparent; cursor: pointer; border-radius: 12px; text-transform: uppercase; }
+  .ev-toggle.open { background: currentColor; color: #fff !important; }
+  .ev-link { font-family: Arial, sans-serif; font-size: 10px; color: #1a3a5c; text-decoration: none; font-weight: 700; }
+  .ev-link:hover { text-decoration: underline; }
+  .events-legend { background: #f0ebe0; padding: 10px 14px; border-radius: 3px; font-family: Arial, sans-serif; font-size: 10px; color: #6b5c44; line-height: 1.5; }
+
+  footer { text-align: center; padding: 20px; border-top: 3px double #2c1810; margin-top: 30px;
+    font-family: Arial, sans-serif; font-size: 10px; color: #6b5c44; }
+
+  #back-to-top {
+    display: none; position: fixed; bottom: 22px; right: 18px; z-index: 999;
+    width: 42px; height: 42px; border-radius: 50%; background: #2c1810; color: #f5f0e8;
+    border: none; font-size: 20px; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+    line-height: 42px; text-align: center; padding: 0;
+  }
+  #back-to-top:hover { background: #1a3a5c; }
+
+  .archive-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+    padding: 6px 14px; background: #ede8db; border-bottom: 1px solid #c8bfa8;
+    font-family: Arial, sans-serif; font-size: 10px; justify-content: center; }
+  .arch-label { font-weight: 700; letter-spacing: 1px; color: #6b5c44; text-transform: uppercase; margin-right: 4px; }
+  .arch-link { color: #2c1810; text-decoration: none; padding: 3px 8px;
+    border: 1px solid #c8bfa8; border-radius: 3px; background: #f5f0e8; }
+  .arch-link:hover { background: #2c1810; color: #f5f0e8; }
+
+  @media (max-width: 600px) {
+    .tab-btn { padding: 6px 10px; font-size: 10px; letter-spacing: 0.5px; }
+    .src-pills { font-size: 9px; }
+  }
+</style>
+</head>
+<body>
+<div class="paper">
+<button id="back-to-top" title="Back to top">&#8679;</button>
+
+  <div class="masthead">
+    <div class="masthead-bar"></div>
+    <div class="masthead-meta">
+      <span>Tuesday, 16 June 2026</span>
+    </div>
+    <div class="masthead-thin"></div>
+    <h1 class="title">The Mumbai Daily</h1>
+    <p class="tagline">Business · Finance · Regulatory · City · Events</p>
+    <div class="src-pills"><span class="src-pill" style="border-color:#1a5c3a;color:#1a5c3a">Mint</span><span class="src-pill" style="border-color:#8b1a1a;color:#8b1a1a">Business Line</span><span class="src-pill" style="border-color:#1a3a5c;color:#1a3a5c">The Hindu</span><span class="src-pill" style="border-color:#c47a1a;color:#c47a1a">Economic Times</span><span class="src-pill" style="border-color:#6b2a8b;color:#6b2a8b">Hindustan Times</span></div>
+    <div class="masthead-thin"></div>
+  </div>
+
+  <noscript><div style="background:#fff8e7;padding:8px 14px;text-align:center;font-family:Arial,sans-serif;font-size:11px;color:#6b4400;border-bottom:1px solid #e0c97a">For interactive tabs and impact toggles, open in a browser. Showing all sections expanded.</div></noscript>
+
+  <nav class="tabs"><a class="tab-btn" data-tab="all" href="#sec-all">All</a><a class="tab-btn" data-tab="headlines" href="#sec-headlines">Headlines</a><a class="tab-btn" data-tab="business" href="#sec-business">Business</a><a class="tab-btn" data-tab="mumbai" href="#sec-mumbai">Mumbai</a><a class="tab-btn" data-tab="world" href="#sec-world">World</a><a class="tab-btn" data-tab="sbi" href="#sec-sbi">SBI</a><a class="tab-btn" data-tab="banking" href="#sec-banking">Banking</a><a class="tab-btn" data-tab="fintech" href="#sec-fintech">Fintech</a><a class="tab-btn" data-tab="events" href="#sec-events">Events</a></nav>
+  <div class="archive-nav"><a class="arch-link" href="index.html" style="background:#2c1810;color:#f5f0e8;border-color:#2c1810">Latest Edition →</a><span class="arch-label">Older Editions:</span><a class="arch-link" href="2026-06-15.html">15 Jun</a><a class="arch-link" href="2026-06-14.html">14 Jun</a><a class="arch-link" href="2026-06-13.html">13 Jun</a><a class="arch-link" href="2026-06-12.html">12 Jun</a><a class="arch-link" href="2026-06-11.html">11 Jun</a><a class="arch-link" href="2026-06-10.html">10 Jun</a><a class="arch-link" href="2026-06-09.html">09 Jun</a><a class="arch-link" href="2026-06-08.html">08 Jun</a><a class="arch-link" href="2026-06-07.html">07 Jun</a><a class="arch-link" href="2026-06-06.html">06 Jun</a></div>
+
+  <div class="legend">
+    <span style="color:#1a5c3a;font-weight:700">▲ Positive</span>
+    <span style="color:#8b1a1a;font-weight:700">▼ Negative</span>
+    <span style="color:#6b5c44;font-weight:700">◆ Watch</span>
+    <span class="legend-note">Click "See Impact" on any story for analysis</span>
+  </div>
+
+  <main>
+    <section class="hero-section" id="sec-all"><h2 class="sec-head hero-head">Today&apos;s Top Story</h2>
+<article class="story hero" data-tab="headlines" data-tabs="headlines" data-id="story-0">
+  <div class="tag-row"></div>
+  <div class="source-line" style="color:#1a3a5c">THE HINDU &middot; Tue, 16 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.thehindu.com/sci-tech/health/heatwaves-and-ozone-together-increase-indias-cardiac-deaths-study/article71105624.ece" target="_blank" rel="noopener">Heatwave-Ozone Combination Drove 830 Extra Cardiac Deaths in 2024</a></h3>
+  <p class="card-summary">A peer-reviewed study found that surface ozone during Indian heatwaves exceeds the WHO guideline of 70 μg/m³ in every region of the country, reaching 85-110 μg/m³ across northern India. The combined heat-ozone stress contributed to approximately 830 additional cardiac deaths during the 2024 heatwave compared to the days immediately preceding it.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-0" style="border-color:#8b1a1a; color:#8b1a1a">See Impact</button>
+    <span class="level-pill" style="color:#8b1a1a">HIGH IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-0">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#8b1a1a">HIGH IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Senior Citizens</span></div><div class="bullet-effect">Older adults face the sharpest cardiac mortality risk as ageing cardiovascular systems are least able to withstand simultaneous heat and ozone stress.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Outdoor Workers</span></div><div class="bullet-effect">Construction workers, agricultural labourers, and street vendors endure prolonged dual exposure to peak heat and ozone with no current occupational protection standard addressing the combined hazard.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Public Hospitals and Emergency Services</span></div><div class="bullet-effect">Heatwave periods now predictably spike cardiac emergencies, placing additional strain on ICU and casualty capacity in cities across northern and central India.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Centre and State Health Ministries</span></div><div class="bullet-effect">Study evidence compels revision of Heat Action Plans to incorporate real-time ozone monitoring and cardiac-risk alerts, closing a major gap in current policy.</div></div></div>
+  </div>
+</article>
+</section><section class="story-section" data-section="headlines" id="sec-headlines"><h2 class="sec-head">Top Headlines</h2><div class="story-grid">
+<article class="story" data-tab="headlines" data-tabs="headlines" data-id="story-1">
+  <div class="tag-row"></div>
+  <div class="source-line" style="color:#1a3a5c">THE HINDU &middot; Tue, 16 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.thehindu.com/news/national/social-media-video-platforms-surpass-traditional-outlets-as-leading-news-sources-report/article71105635.ece" target="_blank" rel="noopener">Social Media Displaces Traditional Outlets as World&#x27;s Top News Source</a></h3>
+  <p class="card-summary">A global online survey of nearly 100,000 people across 48 markets shows social media and video platforms have overtaken television, print and radio as the primary source of news. The shift is compounded by growing audience disengagement from news consumption overall.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-1" style="border-color:#c47a1a; color:#c47a1a">See Impact</button>
+    <span class="level-pill" style="color:#c47a1a">MEDIUM IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-1">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#c47a1a">MEDIUM IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Legacy News Publishers</span></div><div class="bullet-effect">Accelerating audience migration to social and video platforms shrinks the advertiser base and subscription pool that sustains editorial operations.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">News Consumers</span></div><div class="bullet-effect">Algorithm-curated social feeds prioritise engagement over accuracy, increasing exposure to misinformation and reducing access to verified, in-depth reporting.</div></div><div class="bullet" style="background:#f5f0e8"><div class="bullet-head"><span class="bullet-icon" style="color:#6b5c44">◆</span><span class="bullet-who" style="color:#6b5c44">Social Media Platforms</span></div><div class="bullet-effect">Their expanded role as primary news gatekeepers invites intensified regulatory scrutiny on content moderation, political advertising and algorithmic transparency.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="headlines" data-tabs="headlines" data-id="story-2">
+  <div class="tag-row"></div>
+  <div class="source-line" style="color:#1a3a5c">THE HINDU &middot; Tue, 16 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.thehindu.com/news/national/cockroach-janta-party-founder-abhijeet-dipke-slapped-during-protest-in-jaipur/article71104940.ece" target="_blank" rel="noopener">CJP Activist Assaulted at Jaipur Protest, Two Detained</a></h3>
+  <p class="card-summary">Civil society activist and CJP founder Abhijeet Dipke was slapped and manhandled during a protest in Jaipur, prompting his supporters to assault the accused before police stepped in. Two youths have been detained in connection with the attack.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-2" style="border-color:#c47a1a; color:#c47a1a">See Impact</button>
+    <span class="level-pill" style="color:#c47a1a">MEDIUM IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-2">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#c47a1a">MEDIUM IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Civil Society Activists</span></div><div class="bullet-effect">Physical assault on a named activist at a public protest signals rising personal risk for demonstrators and civil society voices in Rajasthan.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Rajasthan Police</span></div><div class="bullet-effect">Double failure — failing to prevent the initial assault and then managing a mob counter-attack — puts the force under scrutiny over protest security protocols.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Right to Protest</span></div><div class="bullet-effect">Escalating physical confrontations at organised demonstrations risk deterring participation and setting a precedent for mob intimidation of dissenting groups.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="headlines" data-tabs="headlines" data-id="story-3">
+  <div class="tag-row"></div>
+  <div class="source-line" style="color:#1a3a5c">THE HINDU &middot; Tue, 16 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.thehindu.com/news/national/west-bengal/trinamool-rebels-avoided-a-long-drawn-battle-for-original-party-tag-by-merging-with-little-known-ncpi/article71105674.ece" target="_blank" rel="noopener">NCPI Merger Lets Trinamool Rebels Vote Before Disqualification Ruling</a></h3>
+  <p class="card-summary">Rebel Trinamool MPs who merged with the NCPI are shielded by the anti-defection law&#x27;s merger exemption, allowing them to vote in the Lok Sabha before any disqualification verdict is delivered against them. With the Centre set to table the Delimitation Bill as early as the monsoon session, these MPs&#x27; pledged support to the NDA could prove decisive in Parliament.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-3" style="border-color:#8b1a1a; color:#8b1a1a">See Impact</button>
+    <span class="level-pill" style="color:#8b1a1a">HIGH IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-3">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#8b1a1a">HIGH IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">NDA / Centre</span></div><div class="bullet-effect">Gains additional, legally insulated Lok Sabha votes for the Delimitation Bill, reducing dependence on other coalition partners to secure a floor majority.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">TMC Leadership</span></div><div class="bullet-effect">Loses effective parliamentary strength as rebel MPs vote against party positions on a constitutional Bill before disqualification proceedings can neutralise them.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Voters in Slower-Growing Opposition States</span></div><div class="bullet-effect">A delimitation exercise backed by these rebel votes risks permanently shrinking parliamentary representation for southern and opposition-leaning states for the next 25 years.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Anti-Defection Jurisprudence</span></div><div class="bullet-effect">The NCPI merger route exploits the Tenth Schedule&#x27;s merger exemption as a tactical parliamentary manoeuvre, setting a precedent that could hollow out the anti-defection law&#x27;s deterrent effect.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="headlines" data-tabs="headlines" data-id="story-4">
+  <div class="tag-row"></div>
+  <div class="source-line" style="color:#1a5c3a">MINT &middot; Tue, 16 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.livemint.com/news/us-news/iran-has-agreed-to-never-have-a-nuclear-weapon-donald-trump-us-paying-iran-300-million-fake-news-11781567796226.html" target="_blank" rel="noopener">Iran Commits to No Nuclear Weapons; Hormuz Shipping Resumes</a></h3>
+  <p class="card-summary">Donald Trump announced that Iran has agreed to forgo nuclear weapons under a new peace arrangement, while denying reports of a $300 million US payment to Tehran. Shipping through the Strait of Hormuz, a critical global oil transit chokepoint, has resumed following the deal.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-4" style="border-color:#8b1a1a; color:#8b1a1a">See Impact</button>
+    <span class="level-pill" style="color:#8b1a1a">HIGH IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-4">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#8b1a1a">HIGH IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Indian Crude Oil Importers &amp; Refiners</span></div><div class="bullet-effect">India, which routes roughly 45% of its crude imports through the Gulf, benefits directly as Hormuz reopening restores tanker flows and deflates elevated freight risk premiums.</div></div><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Global Oil &amp; Energy Markets</span></div><div class="bullet-effect">Hormuz resumption eases the supply-disruption premium baked into crude prices, though any unravelling of the deal could trigger an immediate reversal.</div></div><div class="bullet" style="background:#f5f0e8"><div class="bullet-head"><span class="bullet-icon" style="color:#6b5c44">◆</span><span class="bullet-who" style="color:#6b5c44">Gulf State Governments (Saudi Arabia, UAE, Qatar)</span></div><div class="bullet-effect">Regional governments gain near-term security stability, but a bilaterally announced deal lacking multilateral verification leaves them exposed to compliance uncertainty from Tehran.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Nuclear Non-Proliferation Regime (IAEA, NPT Signatories)</span></div><div class="bullet-effect">A Trump-announced commitment with no disclosed inspection framework or treaty structure creates dangerous ambiguity in the global non-proliferation architecture.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="headlines" data-tabs="headlines" data-id="story-5">
+  <div class="tag-row"></div>
+  <div class="source-line" style="color:#1a5c3a">MINT &middot; Tue, 16 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.livemint.com/news/bolivian-blockades-start-to-recede-after-46-days-of-unrest-11781566489736.html" target="_blank" rel="noopener">Bolivia&#x27;s 46-Day Road Blockades Ease, Ending Food and Medicine Shortages</a></h3>
+  <p class="card-summary">Nationwide road blockades that choked Bolivia&#x27;s supply of food and medicine for 46 days have begun to lift. The prolonged civil unrest was the first major political test for the country&#x27;s new president.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-5" style="border-color:#c47a1a; color:#c47a1a">See Impact</button>
+    <span class="level-pill" style="color:#c47a1a">MEDIUM IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-5">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#c47a1a">MEDIUM IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Bolivian Civilians</span></div><div class="bullet-effect">Resumption of road access restores supply of food, medicine and essentials to communities that faced critical shortages for over six weeks.</div></div><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Bolivia&#x27;s New President</span></div><div class="bullet-effect">Surviving 46 days of organised blockades without capitulating consolidates the new government&#x27;s political authority and negotiating credibility.</div></div><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Traders and Transporters</span></div><div class="bullet-effect">Clearing of blockades reopens freight corridors, allowing traders and hauliers to recover lost revenue and clear backlogs of stranded goods.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="headlines" data-tabs="headlines" data-id="story-6">
+  <div class="tag-row"></div>
+  <div class="source-line" style="color:#1a5c3a">MINT &middot; Tue, 16 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.livemint.com/news/us-news/juneteenth-2026-from-banks-stock-markets-to-post-offices-and-retail-stores-here-s-what-s-open-and-closed-in-the-us-11781557947280.html" target="_blank" rel="noopener">US Banks, Stock Markets and Federal Offices Shut for Juneteenth</a></h3>
+  <p class="card-summary">Juneteenth, the US federal holiday on June 19 marking the end of slavery, triggers closure of banks, stock exchanges, post offices and government offices nationwide. Most retail chains and essential services remain open, with varying hours.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-6" style="border-color:#1a5c3a; color:#1a5c3a">See Impact</button>
+    <span class="level-pill" style="color:#1a5c3a">LOW IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-6">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#1a5c3a">LOW IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Indian Exporters and Businesses with US Counterparties</span></div><div class="bullet-effect">USD wire transfers, trade settlements and official correspondence with US banks and federal offices will be delayed by one business day.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">US Residents and Travellers</span></div><div class="bullet-effect">Access to in-branch banking, postal services and federal government offices is unavailable on June 19, requiring transactions to be front-loaded or deferred.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="headlines" data-tabs="headlines" data-id="story-7">
+  <div class="tag-row"></div>
+  <div class="source-line" style="color:#1a5c3a">MINT &middot; Tue, 16 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.livemint.com/news/world/total-world-latest-news-on-june-16-2026-live-updates-11781557238156.html" target="_blank" rel="noopener">Norway Crown Princess&#x27;s Son Gets Four Years for Rape</a></h3>
+  <p class="card-summary">Marius Borg Høiby, son of Norway&#x27;s Crown Princess Mette-Marit, has been convicted of rape and sentenced to four years in prison. The verdict marks a rare criminal conviction within the immediate circle of a European royal family.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-7" style="border-color:#c47a1a; color:#c47a1a">See Impact</button>
+    <span class="level-pill" style="color:#c47a1a">MEDIUM IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-7">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#c47a1a">MEDIUM IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Norwegian Royal Household</span></div><div class="bullet-effect">The conviction of a Crown Princess&#x27;s son in a rape case inflicts severe reputational damage on the monarchy and forces the palace into crisis-management mode.</div></div><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Sexual Assault Survivors and Advocacy Groups</span></div><div class="bullet-effect">A high-profile conviction against a privileged defendant reinforces that rape allegations are prosecuted regardless of social status, strengthening advocacy narratives globally.</div></div><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Norwegian Judiciary and Rule of Law</span></div><div class="bullet-effect">The verdict publicly demonstrates judicial independence by holding a royal family-adjacent figure to the same criminal standard as any other citizen.</div></div></div>
+  </div>
+</article>
+</div></section><section class="story-section" data-section="business" id="sec-business"><h2 class="sec-head">Business &amp; Markets</h2><div class="story-grid">
+<article class="story" data-tab="business" data-tabs="headlines business" data-id="story-10">
+  <div class="tag-row"></div>
+  <div class="source-line" style="color:#8b1a1a">BUSINESS LINE &middot; Mon, 15 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.thehindubusinessline.com/markets/commodities/bulk-users-diverted-350-lakh-tons-of-diesel-sales-to-retail-outlets-in-may-forcing-govt-to-cap-sales/article71105460.ece" target="_blank" rel="noopener">Govt caps retail diesel sales after bulk buyers exploit price gap</a></h3>
+  <p class="card-summary">Bulk diesel consumers exploited the price differential between retail and bulk procurement channels, diverting 3.50 lakh tonnes to petrol pump purchases in May 2026. The government imposed a retail sales cap after diesel offtake surged over 10% in 327 districts compared to a year earlier.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-10" style="border-color:#c47a1a; color:#c47a1a">See Impact</button>
+    <span class="level-pill" style="color:#c47a1a">MEDIUM IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-10">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#c47a1a">MEDIUM IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Small Transporters and Truck Operators</span></div><div class="bullet-effect">Pump-level supply tightening caused by bulk buyer diversion squeezes genuine retail consumers, risking queues and rationing across high-demand districts.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Industrial and Commercial Bulk Diesel Users</span></div><div class="bullet-effect">Government-imposed retail cap closes the arbitrage window, forcing bulk consumers back to higher-priced contracted supply channels.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Oil Marketing Companies (IOC, BPCL, HPCL)</span></div><div class="bullet-effect">Distorted retail demand surge strained distribution logistics and inventory planning across retail outlets; regulatory intervention signals pressure to align bulk and retail pricing.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="business" data-tabs="headlines business" data-id="story-11">
+  <div class="tag-row"></div>
+  <div class="source-line" style="color:#8b1a1a">BUSINESS LINE &middot; Mon, 15 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.thehindubusinessline.com/markets/markets-gain-on-west-asia-ceasefire-hopes-oil-slides/article71105915.ece" target="_blank" rel="noopener">Ceasefire Hopes Spark ₹18 Lakh Crore Market Rally, Oil Falls</a></h3>
+  <p class="card-summary">Indian equity markets added ₹18 lakh crore in investor wealth across two sessions as West Asia ceasefire hopes drove a broad rally and pushed oil prices lower. Foreign portfolio investors turned net buyers for the first time in 11 sessions, marking a decisive shift in sentiment.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-11" style="border-color:#8b1a1a; color:#8b1a1a">See Impact</button>
+    <span class="level-pill" style="color:#8b1a1a">HIGH IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-11">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#8b1a1a">HIGH IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Retail Equity Investors</span></div><div class="bullet-effect">Portfolio values surge ₹18 lakh crore in two sessions, recovering a significant chunk of recent FPI-sell-off-driven losses.</div></div><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Foreign Portfolio Investors</span></div><div class="bullet-effect">FPIs return as net buyers after 11 consecutive sessions of selling, signalling restored risk appetite for Indian equities amid geopolitical de-escalation.</div></div><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Aviation, Logistics and Paint Companies</span></div><div class="bullet-effect">Sliding crude prices directly compress jet fuel, diesel and petrochemical input costs, offering near-term margin relief to oil-sensitive industries.</div></div><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">INR and Forex Markets</span></div><div class="bullet-effect">Concurrent FPI inflows and a lower crude import bill ease pressure on the current account deficit, providing near-term support to the rupee.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="business" data-tabs="headlines business" data-id="story-12">
+  <div class="tag-row"></div>
+  <div class="source-line" style="color:#8b1a1a">BUSINESS LINE &middot; Mon, 15 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.thehindubusinessline.com/economy/agri-business/milky-mist-updating-books-with-fy26-numbers-to-file-udrhp-for-ipo-says-ceo-rathnam/article71101974.ece" target="_blank" rel="noopener">Milky Mist Updates FY26 Books, Set to Refile IPO Draft</a></h3>
+  <p class="card-summary">Tamil Nadu dairy firm Milky Mist is incorporating FY26 financials to file an Updated Draft Red Herring Prospectus for its ₹2,035 crore IPO. The move is time-sensitive as the company&#x27;s existing SEBI approval, granted in October 2025, lapses in October 2026.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-12" style="border-color:#c47a1a; color:#c47a1a">See Impact</button>
+    <span class="level-pill" style="color:#c47a1a">MEDIUM IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-12">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#c47a1a">MEDIUM IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Retail IPO Applicants</span></div><div class="bullet-effect">Once the updated prospectus clears SEBI, retail investors get a fresh subscription window for a branded, profitable mid-sized dairy firm — a relatively rare IPO category.</div></div><div class="bullet" style="background:#f5f0e8"><div class="bullet-head"><span class="bullet-icon" style="color:#6b5c44">◆</span><span class="bullet-who" style="color:#6b5c44">Milky Mist Promoters and Early Investors</span></div><div class="bullet-effect">The ₹2,035 crore issue gives promoters a liquidity event and capital for capacity expansion, but any further delay risks missing the October 2026 deadline and forcing a full SEBI re-approval.</div></div><div class="bullet" style="background:#f5f0e8"><div class="bullet-head"><span class="bullet-icon" style="color:#6b5c44">◆</span><span class="bullet-who" style="color:#6b5c44">Unlisted Dairy and FMCG Brands</span></div><div class="bullet-effect">Milky Mist&#x27;s listing valuation will set a live market benchmark for other mid-sized unlisted dairy and value-added food brands currently weighing public market timelines.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="business" data-tabs="headlines business" data-id="story-28">
+  <div class="tag-row"></div>
+  <div class="source-line" style="color:#1a5c3a">MINT &middot; Tue, 16 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.livemint.com/market/cash-squeeze-set-to-lift-taiwan-s-yields-further-analysts-say-11781565817056.html" target="_blank" rel="noopener">Tight Liquidity and Inflation Fears Drive Taiwan Bond Yields Higher</a></h3>
+  <p class="card-summary">Taiwan&#x27;s government bond yields are set to rise further as a cash squeeze in local markets and mounting inflation concerns erode demand for the island&#x27;s debt. Analysts see no near-term catalyst for relief in borrowing conditions.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-28" style="border-color:#c47a1a; color:#c47a1a">See Impact</button>
+    <span class="level-pill" style="color:#c47a1a">MEDIUM IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-28">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#c47a1a">MEDIUM IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Taiwan Government (Debt Issuance)</span></div><div class="bullet-effect">Rising yields directly increase the cost of new sovereign bond issuances, widening Taiwan&#x27;s debt servicing burden in upcoming auctions.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Taiwan Life Insurers and Pension Funds</span></div><div class="bullet-effect">Domestic institutions holding large inventories of Taiwanese government bonds face mark-to-market losses as prices fall with rising yields.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Foreign Bond Investors in Taiwan</span></div><div class="bullet-effect">Offshore holders of Taiwan debt face a double squeeze — falling bond prices compounded by currency risk if the NT dollar weakens alongside tightening conditions.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="business" data-tabs="headlines business" data-id="story-29">
+  <div class="tag-row"></div>
+  <div class="source-line" style="color:#1a5c3a">MINT &middot; Tue, 16 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.livemint.com/market/trader-loses-1-million-on-cabo-verde-s-stunning-world-cup-tie-11781565756729.html" target="_blank" rel="noopener">Cabo Verde Draws Spain at World Cup, Costs Polymarket Trader $1 Million</a></h3>
+  <p class="card-summary">Cabo Verde held Spain to a draw in the World Cup in one of the tournament&#x27;s biggest upsets, with a 40-year-old goalkeeper central to the result. A single trader on prediction market platform Polymarket lost nearly $1 million after wagering on a Spanish win.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-29" style="border-color:#1a5c3a; color:#1a5c3a">See Impact</button>
+    <span class="level-pill" style="color:#1a5c3a">LOW IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-29">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#1a5c3a">LOW IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Polymarket Bettors</span></div><div class="bullet-effect">Traders positioned on a routine Spain win faced outsized losses, with one ticket alone wiping nearly $1 million, exposing the tail-risk of prediction markets on low-probability sports outcomes.</div></div><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Cabo Verde Football Fans and Nation</span></div><div class="bullet-effect">The draw against a global football powerhouse delivers a landmark result for the small island nation, sharply raising its visibility on the world football stage.</div></div></div>
+  </div>
+</article>
+</div></section><section class="story-section" data-section="mumbai" id="sec-mumbai"><h2 class="sec-head">Mumbai City</h2><div class="story-grid">
+<article class="story" data-tab="mumbai" data-tabs="mumbai" data-id="story-13">
+  <div class="tag-row"><span class="sec-tag" style="background:#8b1a1a">Mumbai</span></div>
+  <div class="source-line" style="color:#1a3a5c">THE HINDU &middot; Tue, 16 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.thehindu.com/news/national/maharashtra/all-mps-are-with-party-only-shiv-sena-ubt-amid-operation-tiger-buzz/article71105408.ece" target="_blank" rel="noopener">Shiv Sena UBT Asserts MP Loyalty Amid Defection Speculation</a></h3>
+  <p class="card-summary">Shiv Sena (UBT) pushed back against &#x27;Operation Tiger&#x27; speculation that some of its MPs are set to defect to Eknath Shinde&#x27;s Shiv Sena faction. The party publicly insisted all its Members of Parliament remain loyal, signalling fresh internal pressure on Uddhav Thackeray&#x27;s camp.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-13" style="border-color:#c47a1a; color:#c47a1a">See Impact</button>
+    <span class="level-pill" style="color:#c47a1a">MEDIUM IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-13">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#c47a1a">MEDIUM IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Shiv Sena (UBT) MPs</span></div><div class="bullet-effect">Defection buzz places MPs under factional pressure; any switch requires two-thirds of the legislative party to avoid anti-defection disqualification.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Uddhav Thackeray&#x27;s Party Leadership</span></div><div class="bullet-effect">Recurring poaching speculation weakens Thackeray&#x27;s authority and risks further erosion of the faction&#x27;s already-reduced parliamentary strength.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Maharashtra MVA Opposition</span></div><div class="bullet-effect">A successful defection drive would shrink the opposition alliance&#x27;s numbers in Parliament and tilt Maharashtra&#x27;s political balance further toward the ruling Mahayuti.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="mumbai" data-tabs="mumbai" data-id="story-17">
+  <div class="tag-row"><span class="sec-tag" style="background:#8b1a1a">Mumbai</span></div>
+  <div class="source-line" style="color:#6b2a8b">HINDUSTAN TIMES &middot; Tue, 16 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.hindustantimes.com/cities/mumbai-news/tv-actor-sanchita-ugale-dies-by-suicide-at-22-cousin-seeks-probe-101781550687878.html" target="_blank" rel="noopener">Sanchita Ugale, 22, Dies by Suicide; Cousin Flags Suspicious Instagram Account</a></h3>
+  <p class="card-summary">Marathi TV actor Sanchita Ugale died by suicide at 22; her cousin has approached police seeking a probe into a suspicious Instagram account using her photograph and carrying a recently uploaded reel.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-17" style="border-color:#c47a1a; color:#c47a1a">See Impact</button>
+    <span class="level-pill" style="color:#c47a1a">MEDIUM IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-17">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#c47a1a">MEDIUM IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Young TV &amp; OTT Performers</span></div><div class="bullet-effect">The death of a 22-year-old actress renews scrutiny of mental health pressures, precarious contracts, and social media stress faced by young talent in the entertainment industry.</div></div><div class="bullet" style="background:#f5f0e8"><div class="bullet-head"><span class="bullet-icon" style="color:#6b5c44">◆</span><span class="bullet-who" style="color:#6b5c44">Maharashtra Cybercrime Police</span></div><div class="bullet-effect">Investigators must now trace and authenticate the flagged Instagram account to determine whether digital impersonation, harassment, or coercion preceded the suicide.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Social Media Impersonation Victims</span></div><div class="bullet-effect">The case highlights how quickly fake or misused accounts surface around vulnerable individuals, with platforms offering little proactive detection or takedown before harm occurs.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="mumbai" data-tabs="mumbai" data-id="story-18">
+  <div class="tag-row"><span class="sec-tag" style="background:#8b1a1a">Mumbai</span></div>
+  <div class="source-line" style="color:#6b2a8b">HINDUSTAN TIMES &middot; Tue, 16 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.hindustantimes.com/cities/mumbai-news/irked-with-inaction-hc-seeks-data-on-potholes-manholes-from-civic-bodies-in-mmr-101781550686368.html" target="_blank" rel="noopener">Bombay HC Pulls Up MMR Civic Bodies Over Pothole Inaction</a></h3>
+  <p class="card-summary">The Bombay High Court directed civic bodies across the Mumbai Metropolitan Region to submit data on potholes and unsafe manholes, citing persistent poor road conditions despite official assurances of resolution. The court called the gap between authority claims and ground reality misleading.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-18" style="border-color:#c47a1a; color:#c47a1a">See Impact</button>
+    <span class="level-pill" style="color:#c47a1a">MEDIUM IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-18">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#c47a1a">MEDIUM IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">MMR Daily Commuters</span></div><div class="bullet-effect">Millions of road users across MMR continue to face accident risk and vehicle damage from unrepaired potholes, with no confirmed remediation deadline in sight.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">BMC and MMR Municipal Corporations</span></div><div class="bullet-effect">Civic bodies face court-mandated data disclosure obligations, raising the risk of contempt proceedings if road conditions remain unaddressed after official assurances.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Two-Wheeler Riders</span></div><div class="bullet-effect">Motorcyclists and scooter users, disproportionately vulnerable to open manholes and deep potholes, face continued injury and fatality risk on MMR roads.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="mumbai" data-tabs="mumbai" data-id="story-19">
+  <div class="tag-row"><span class="sec-tag" style="background:#8b1a1a">Mumbai</span></div>
+  <div class="source-line" style="color:#6b2a8b">HINDUSTAN TIMES &middot; Tue, 16 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.hindustantimes.com/cities/mumbai-news/best-begins-replacing-cables-to-end-sobo-power-woes-101781550626892.html" target="_blank" rel="noopener">BEST Begins Cable Replacement to End South Mumbai Power Outages</a></h3>
+  <p class="card-summary">BEST has started trenching work in South Mumbai to lay new 33kV ultra-high-pressure cables, which will run beneath railway tracks over a 3-4 km stretch. The project replaces ageing infrastructure responsible for persistent power disruptions in the SoBo area.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-19" style="border-color:#c47a1a; color:#c47a1a">See Impact</button>
+    <span class="level-pill" style="color:#c47a1a">MEDIUM IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-19">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#c47a1a">MEDIUM IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">South Mumbai Residents</span></div><div class="bullet-effect">Chronic power outages in SoBo should ease once higher-capacity 33kV cables replace the failing old network.</div></div><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Local Businesses and Shops in SoBo</span></div><div class="bullet-effect">Frequent power cuts that disrupt commercial activity, refrigeration and POS systems in South Mumbai&#x27;s dense commercial pockets will reduce after commissioning.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Railways and Commuters</span></div><div class="bullet-effect">Trenching beneath railway tracks requires rail authority coordination and may cause localised track-access disruptions during the construction phase.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="mumbai" data-tabs="mumbai" data-id="story-20">
+  <div class="tag-row"><span class="sec-tag" style="background:#8b1a1a">Mumbai</span></div>
+  <div class="source-line" style="color:#6b2a8b">HINDUSTAN TIMES &middot; Tue, 16 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.hindustantimes.com/cities/mumbai-news/with-rainfall-deficient-looming-irrigation-dept-restricts-use-of-water-in-dams-101781550624676.html" target="_blank" rel="noopener">Maharashtra Locks Down Dam Water for Drinking as Rainfall Deficit Looms</a></h3>
+  <p class="card-summary">Maharashtra&#x27;s irrigation department has barred any diversion of dam water earmarked for drinking to other uses, citing the risk of a rainfall deficit. The order, issued by Principal Secretary Eknath Dawale, makes exceptions only for genuine emergencies.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-20" style="border-color:#c47a1a; color:#c47a1a">See Impact</button>
+    <span class="level-pill" style="color:#c47a1a">MEDIUM IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-20">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#c47a1a">MEDIUM IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Farmers</span></div><div class="bullet-effect">Irrigation allocations from dams will be curtailed as drinking water takes first priority, threatening kharif sowing and standing crops if monsoon remains deficient.</div></div><div class="bullet" style="background:#f5f0e8"><div class="bullet-head"><span class="bullet-icon" style="color:#6b5c44">◆</span><span class="bullet-who" style="color:#6b5c44">Urban Residents</span></div><div class="bullet-effect">Drinking water supplies across Maharashtra towns are formally ringfenced from diversion, offering near-term security but leaving households exposed if reservoir levels continue to fall.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Maharashtra Govt</span></div><div class="bullet-effect">Authorities must now referee an escalating conflict between farm lobbies demanding irrigation access and civic bodies protecting municipal water, with electoral consequences in a drought-prone state.</div></div></div>
+  </div>
+</article>
+</div></section><section class="story-section" data-section="world" id="sec-world"><h2 class="sec-head">World</h2><div class="story-grid">
+<article class="story" data-tab="world" data-tabs="world" data-id="story-8">
+  <div class="tag-row"><span class="sec-tag" style="background:#1a3a5c">World</span></div>
+  <div class="source-line" style="color:#1a3a5c">THE HINDU &middot; Tue, 16 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.thehindu.com/news/national/tamil-nadu/us-iran-peace-deal-welcome-hope-it-lasts-anantha-nageswaran/article71106209.ece" target="_blank" rel="noopener">CEA Welcomes U.S.-Iran Peace, Calls for Indian Mittelstand</a></h3>
+  <p class="card-summary">Chief Economic Adviser V. Anantha Nageswaran welcomed the U.S.-Iran peace deal and expressed hope for its longevity. He also argued that India must cultivate its own Mittelstand — a deep ecosystem of globally competitive mid-sized manufacturers, on the German model.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-8" style="border-color:#c47a1a; color:#c47a1a">See Impact</button>
+    <span class="level-pill" style="color:#c47a1a">MEDIUM IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-8">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#c47a1a">MEDIUM IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Indian MSMEs and Mid-Sized Manufacturers</span></div><div class="bullet-effect">A CEA-level endorsement of the Mittelstand model signals potential policy intent to direct credit, procurement preference, and ecosystem support toward scaling mid-tier firms beyond the startup-or-conglomerate binary.</div></div><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Indian Oil Importers and Petroleum Refiners</span></div><div class="bullet-effect">A durable U.S.-Iran peace deal could restore Iranian crude to global markets, easing supply tightness and providing India — a major oil importer — with more competitive feedstock options.</div></div><div class="bullet" style="background:#f5f0e8"><div class="bullet-head"><span class="bullet-icon" style="color:#6b5c44">◆</span><span class="bullet-who" style="color:#6b5c44">Centre and Industrial Policymakers</span></div><div class="bullet-effect">The CEA&#x27;s Mittelstand prescription sets a demanding benchmark that exposes the absence of a coherent national policy for the mid-market manufacturing tier, putting pressure on Finance and Commerce ministries to respond.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="world" data-tabs="world" data-id="story-21">
+  <div class="tag-row"><span class="sec-tag" style="background:#1a3a5c">World</span></div>
+  <div class="source-line" style="color:#1a3a5c">THE HINDU &middot; Tue, 16 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.thehindu.com/news/international/8-presumed-dead-after-b-52-bomber-crashes-at-us-air-force-base-in-california/article71106793.ece" target="_blank" rel="noopener">B-52 Bomber Crashes at California Air Force Base, Eight Feared Dead</a></h3>
+  <p class="card-summary">A B-52 bomber crashed at a U.S. Air Force base in California, killing all eight crew members who are presumed dead. Aerial footage showed the aircraft was almost entirely destroyed on impact.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-21" style="border-color:#8b1a1a; color:#8b1a1a">See Impact</button>
+    <span class="level-pill" style="color:#8b1a1a">HIGH IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-21">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#8b1a1a">HIGH IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Families of B-52 Crew Members</span></div><div class="bullet-effect">Eight military personnel are presumed dead, triggering next-of-kin notifications and acute grief for families with no information yet on identities.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">U.S. Air Force B-52 Fleet Operations</span></div><div class="bullet-effect">A mandatory safety stand-down and fleet-wide airworthiness review of all operational B-52s is virtually certain, disrupting strategic bomber missions globally.</div></div><div class="bullet" style="background:#f5f0e8"><div class="bullet-head"><span class="bullet-icon" style="color:#6b5c44">◆</span><span class="bullet-who" style="color:#6b5c44">U.S. Military Aviation Safety Investigators</span></div><div class="bullet-effect">An Air Force Accident Investigation Board will be convened immediately to determine cause, examining maintenance records, crew training, and the aircraft&#x27;s age-related structural integrity.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">U.S. B-21 Raider Replacement Programme</span></div><div class="bullet-effect">The crash of an ageing Cold War-era bomber intensifies Congressional pressure to accelerate procurement and funding for the next-generation B-21 Raider as the B-52&#x27;s successor.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="world" data-tabs="world" data-id="story-22">
+  <div class="tag-row"><span class="sec-tag" style="background:#1a3a5c">World</span></div>
+  <div class="source-line" style="color:#1a3a5c">THE HINDU &middot; Mon, 15 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.thehindu.com/news/international/bangladesh-pms-adviser-returns-from-delhi-airport-says-he-was-humiliated-by-immigration/article71106144.ece" target="_blank" rel="noopener">Bangladesh PM Adviser Held at Delhi Airport, Returns in Protest</a></h3>
+  <p class="card-summary">A senior adviser to Bangladesh&#x27;s Prime Minister was detained by Indian immigration at Delhi airport for over two hours and chose to fly home rather than enter India, publicly citing humiliation. The incident marks a serious protocol breakdown at a time when India-Bangladesh relations are already under significant strain.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-22" style="border-color:#8b1a1a; color:#8b1a1a">See Impact</button>
+    <span class="level-pill" style="color:#8b1a1a">HIGH IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-22">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#8b1a1a">HIGH IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">India-Bangladesh Bilateral Relations</span></div><div class="bullet-effect">A public snub to a sitting government adviser deepens bilateral mistrust and raises the risk of a formal diplomatic protest from Dhaka.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Bangladesh Interim Government</span></div><div class="bullet-effect">The episode hands the Yunus administration domestic political cover to harden its posture toward India and resist New Delhi&#x27;s pressure on outstanding bilateral issues.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Indian Ministry of External Affairs</span></div><div class="bullet-effect">MEA faces reputational damage from a protocol failure involving a foreign government official and must now manage the risk of a formal démarche from Dhaka.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Bangladeshi Officials and Diplomats Visiting India</span></div><div class="bullet-effect">The detention casts doubt on protocol assurances for official visitors, creating a chilling effect on future high-level exchanges between the two governments.</div></div></div>
+  </div>
+</article>
+</div></section><section class="story-section" data-section="sbi" id="sec-sbi"><h2 class="sec-head">SBI — Your JV Business</h2><div class="story-grid"><div class="empty">No stories in this section today.</div></div></section><section class="story-section" data-section="banking" id="sec-banking"><h2 class="sec-head">Banking — RBI, SEBI &amp; Sector</h2><div class="story-grid">
+<article class="story" data-tab="banking" data-tabs="banking" data-id="story-9">
+  <div class="tag-row"><span class="sec-tag" style="background:#2a6b5c">Banking</span></div>
+  <div class="source-line" style="color:#8b1a1a">BUSINESS LINE &middot; Mon, 15 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.thehindubusinessline.com/markets/forex/us-iran-agreement-rupee-touches-5-week-high/article71105291.ece" target="_blank" rel="noopener">Rupee Climbs to 5-Week High on US-Iran Deal</a></h3>
+  <p class="card-summary">The rupee gained 40 paise to close at 94.71 per US dollar, its strongest level in five weeks, after a US-Iran agreement eased geopolitical tensions and improved risk sentiment in currency markets.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-9" style="border-color:#c47a1a; color:#c47a1a">See Impact</button>
+    <span class="level-pill" style="color:#c47a1a">MEDIUM IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-9">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#c47a1a">MEDIUM IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">IT &amp; Software Exporters</span></div><div class="bullet-effect">Rupee appreciation reduces dollar-billed export revenues when repatriated, directly compressing margins for India&#x27;s large IT sector.</div></div><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Oil Importers &amp; Fuel Retailers</span></div><div class="bullet-effect">A US-Iran deal signals potential Iranian crude re-entering global markets; combined with a stronger rupee, India&#x27;s oil import bill could ease meaningfully.</div></div><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Capital Goods &amp; Electronics Importers</span></div><div class="bullet-effect">Rupee strength lowers the landed cost of dollar-denominated imports, improving purchasing power for businesses buying foreign machinery, semiconductors, and components.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="banking" data-tabs="banking" data-id="story-14">
+  <div class="tag-row"><span class="sec-tag" style="background:#2a6b5c">Banking</span></div>
+  <div class="source-line" style="color:#8b1a1a">BUSINESS LINE &middot; Mon, 15 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.thehindubusinessline.com/money-and-banking/govt-to-sell-up-to-5-stake-in-general-insurance-corporation/article71105960.ece" target="_blank" rel="noopener">Centre Divests Up to 5% Stake in GIC Re via OFS</a></h3>
+  <p class="card-summary">The government is offloading up to 5% of its stake in General Insurance Corporation of India through an Offer for Sale. The issue opens for non-retail investors on June 16 and for retail investors on June 17.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-14" style="border-color:#c47a1a; color:#c47a1a">See Impact</button>
+    <span class="level-pill" style="color:#c47a1a">MEDIUM IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-14">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#c47a1a">MEDIUM IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Retail Investors</span></div><div class="bullet-effect">OFS window on June 17 offers retail buyers a chance to acquire GIC Re shares, typically at a floor-price discount to the prevailing market price.</div></div><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Centre / Disinvestment Programme</span></div><div class="bullet-effect">Sale proceeds bolster the government&#x27;s non-tax revenue and help narrow the gap against its annual disinvestment target.</div></div><div class="bullet" style="background:#f5f0e8"><div class="bullet-head"><span class="bullet-icon" style="color:#6b5c44">◆</span><span class="bullet-who" style="color:#6b5c44">GIC Re Existing Shareholders</span></div><div class="bullet-effect">A 5% stake sale raises public float and broadens the shareholder base, but near-term supply overhang may soften the stock price.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="banking" data-tabs="banking" data-id="story-15">
+  <div class="tag-row"><span class="sec-tag" style="background:#2a6b5c">Banking</span></div>
+  <div class="source-line" style="color:#8b1a1a">BUSINESS LINE &middot; Mon, 15 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.thehindubusinessline.com/markets/india-inc-raises-more-via-cps-vis-a-vis-corporate-bonds-in-fy27-so-far/article71105115.ece" target="_blank" rel="noopener">India Inc Floods Short-Term Market with Commercial Paper in FY27</a></h3>
+  <p class="card-summary">Indian companies raised ₹4,39,693 crore through 1,920 commercial paper issuances in FY27 up to June 12, surpassing corporate bond fundraising. The trend indicates corporates are preferring short-tenor, lower-cost instruments, likely positioning to refinance into long-term bonds if interest rates fall further.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-15" style="border-color:#c47a1a; color:#c47a1a">See Impact</button>
+    <span class="level-pill" style="color:#c47a1a">MEDIUM IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-15">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#c47a1a">MEDIUM IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Corporate Borrowers</span></div><div class="bullet-effect">CFOs are locking in cheaper short-term CP funding now, deferring long-tenor bond issuances in anticipation of lower borrowing costs ahead.</div></div><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Liquid and Ultra-Short Debt Fund Investors</span></div><div class="bullet-effect">Surge in CP supply expands investable universe for liquid and money-market schemes, supporting competitive yields for retail and institutional investors in these categories.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Corporate Bond Market</span></div><div class="bullet-effect">Sustained preference for CPs over long-tenor bonds stunts the deepening of India&#x27;s corporate debt market, reducing issuances that insurers, pension funds, and long-duration investors rely on.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="banking" data-tabs="banking" data-id="story-16">
+  <div class="tag-row"><span class="sec-tag" style="background:#2a6b5c">Banking</span></div>
+  <div class="source-line" style="color:#c47a1a">ECONOMIC TIMES &middot; Tue, 16 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://economictimes.indiatimes.com/industry/banking/finance/angel-one-settles-sebi-case-with-4-28-crore-payment/articleshow/131754475.cms" target="_blank" rel="noopener">Angel One Pays ₹4.28 Crore to Close SEBI Enforcement Case</a></h3>
+  <p class="card-summary">Angel One, one of India&#x27;s largest discount brokers, has settled a regulatory case with SEBI by paying ₹4.28 crore through the consent mechanism. The settlement closes proceedings without a formal admission or denial of wrongdoing by the company.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-16" style="border-color:#c47a1a; color:#c47a1a">See Impact</button>
+    <span class="level-pill" style="color:#c47a1a">MEDIUM IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-16">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#c47a1a">MEDIUM IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Angel One Retail Clients</span></div><div class="bullet-effect">Millions of retail investors using the platform may reassess confidence in the broker&#x27;s internal compliance and client-fund handling practices.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Discount Broking Sector</span></div><div class="bullet-effect">SEBI&#x27;s pursuit of a top-five broker through to a formal settlement puts the entire discount broking industry on notice about compliance rigour.</div></div><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">SEBI Consent Mechanism</span></div><div class="bullet-effect">The settlement validates SEBI&#x27;s consent process as an efficient enforcement tool, recovering penalties without protracted Securities Appellate Tribunal litigation.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="banking" data-tabs="banking" data-id="story-23">
+  <div class="tag-row"><span class="sec-tag" style="background:#2a6b5c">Banking</span></div>
+  <div class="source-line" style="color:#8b1a1a">BUSINESS LINE &middot; Mon, 15 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.thehindubusinessline.com/money-and-banking/rbi-to-banks-nbfcs-ensure-policies-and-practices-do-not-create-incentives-for-mis-selling/article71105598.ece" target="_blank" rel="noopener">RBI Bans Mis-Selling Incentives at Banks and NBFCs from 2027</a></h3>
+  <p class="card-summary">The RBI has directed banks and NBFCs to overhaul internal policies so that staff incentives do not encourage mis-selling of financial products to customers. Explicit customer consent and product suitability assessments will be mandatory from January 2027.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-23" style="border-color:#8b1a1a; color:#8b1a1a">See Impact</button>
+    <span class="level-pill" style="color:#8b1a1a">HIGH IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-23">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#8b1a1a">HIGH IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Retail Financial Product Buyers</span></div><div class="bullet-effect">Mandatory suitability checks and explicit consent requirements reduce the risk of being pushed unsuitable loans, insurance or investment products.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Banks &amp; NBFCs</span></div><div class="bullet-effect">Institutions must redesign sales incentive structures and build consent-documentation systems, raising compliance costs and likely denting cross-sell revenues.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Bank Relationship Managers and Branch Sales Staff</span></div><div class="bullet-effect">Target-linked pay structures tied to product push will need to be restructured, altering how frontline staff earn performance bonuses.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Bancassurance and Mutual Fund Distribution Partners</span></div><div class="bullet-effect">Insurers and AMCs relying on bank branches for high-volume distribution face tighter scrutiny on suitability, potentially slowing policy and unit sales through this channel.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="banking" data-tabs="banking" data-id="story-24">
+  <div class="tag-row"><span class="sec-tag" style="background:#2a6b5c">Banking</span></div>
+  <div class="source-line" style="color:#8b1a1a">BUSINESS LINE &middot; Mon, 15 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.thehindubusinessline.com/money-and-banking/oil-retreat-hands-rbi-an-assist-in-boosting-rupees-near-term-outlook/article71104107.ece" target="_blank" rel="noopener">Rupee Hits Seven-Week High as Global Oil Prices Retreat</a></h3>
+  <p class="card-summary">The rupee rose 0.7% to 94.4625 per dollar on Monday, its strongest level in seven weeks, driven by falling global oil prices that shrink India&#x27;s import bill and reduce pressure on the currency. The decline in crude costs has given the RBI more room to manage exchange-rate stability without heavy intervention.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-24" style="border-color:#c47a1a; color:#c47a1a">See Impact</button>
+    <span class="level-pill" style="color:#c47a1a">MEDIUM IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-24">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#c47a1a">MEDIUM IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Oil Refiners &amp; Fuel Importers</span></div><div class="bullet-effect">A stronger rupee directly lowers the landed cost of crude, easing margin pressure on state refiners like IOC, BPCL, and HPCL.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">IT &amp; Software Exporters</span></div><div class="bullet-effect">Rupee appreciation reduces INR realization per dollar of export revenue, compressing margins for large tech exporters billing in dollars.</div></div><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">RBI</span></div><div class="bullet-effect">Oil-led currency tailwinds reduce the need for forex intervention, preserving reserves while supporting the central bank&#x27;s inflation management mandate.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="banking" data-tabs="banking" data-id="story-25">
+  <div class="tag-row"><span class="sec-tag" style="background:#2a6b5c">Banking</span></div>
+  <div class="source-line" style="color:#8b1a1a">BUSINESS LINE &middot; Mon, 15 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.thehindubusinessline.com/money-and-banking/goldman-sachs-sees-india-bop-surplus-after-2-yrs-of-deficit-cuts-cad-forecast-to-13-of-gdp/article71103663.ece" target="_blank" rel="noopener">India Returns to Balance of Payments Surplus After Two-Year Gap</a></h3>
+  <p class="card-summary">India posted a balance of payments surplus of $7.2 billion in Q1 2026, reversing two consecutive years of deficit. Goldman Sachs has revised its current account deficit forecast down to 1.3% of GDP, signalling a healthier external sector despite subdued capital inflows and elevated energy costs.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-25" style="border-color:#c47a1a; color:#c47a1a">See Impact</button>
+    <span class="level-pill" style="color:#c47a1a">MEDIUM IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-25">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#c47a1a">MEDIUM IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">RBI</span></div><div class="bullet-effect">The BoP surplus replenishes India&#x27;s foreign exchange reserves, giving RBI greater capacity to manage rupee volatility without depleting buffers.</div></div><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">INR / Indian Rupee</span></div><div class="bullet-effect">A return to external surplus eases structural depreciation pressure on the rupee, lowering hedging costs for importers and companies servicing foreign-currency debt.</div></div><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Finance Ministry</span></div><div class="bullet-effect">A CAD trimmed to 1.3% of GDP strengthens India&#x27;s external stability credentials, supporting the government&#x27;s case before global credit rating agencies and multilateral lenders.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="banking" data-tabs="banking" data-id="story-26">
+  <div class="tag-row"><span class="sec-tag" style="background:#2a6b5c">Banking</span></div>
+  <div class="source-line" style="color:#8b1a1a">BUSINESS LINE &middot; Mon, 15 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.thehindubusinessline.com/markets/razorpay-files-confidential-ipo-paper-eyes-500-600-million-public-issue/article71103574.ece" target="_blank" rel="noopener">Razorpay Files Confidential IPO Papers, Targets $500-600 Million</a></h3>
+  <p class="card-summary">Razorpay has filed confidential draft IPO papers with regulators for a public issue targeting $500-600 million. The fintech firm completed its reverse flip from the US to India in 2025, having converted to a public limited company in April that year ahead of the listing.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-26" style="border-color:#c47a1a; color:#c47a1a">See Impact</button>
+    <span class="level-pill" style="color:#c47a1a">MEDIUM IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-26">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#c47a1a">MEDIUM IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">US-Domiciled Indian Startups</span></div><div class="bullet-effect">Razorpay&#x27;s IPO filing validates the reverse-flip-then-list playbook, prodding other Delaware-incorporated unicorns to accelerate redomiciliation to India.</div></div><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">VC / PE Investors &amp; ESOP Holders</span></div><div class="bullet-effect">Sequoia, GIC, and Razorpay employees holding stock options gain a concrete liquidity window after years locked into a private-company cap table.</div></div><div class="bullet" style="background:#f5f0e8"><div class="bullet-head"><span class="bullet-icon" style="color:#6b5c44">◆</span><span class="bullet-who" style="color:#6b5c44">Rival Payment Processors</span></div><div class="bullet-effect">A listed Razorpay with disclosed financials sets a public valuation and margin benchmark that intensifies competitive and investor scrutiny across Paytm, PayU and BillDesk.</div></div></div>
+  </div>
+</article>
+</div></section><section class="story-section" data-section="fintech" id="sec-fintech"><h2 class="sec-head">Fintech — Competing With SBI</h2><div class="story-grid">
+<article class="story" data-tab="fintech" data-tabs="fintech" data-id="story-27">
+  <div class="tag-row"><span class="sec-tag" style="background:#6b2a8b">Fintech</span></div>
+  <div class="source-line" style="color:#1a3a5c">THE HINDU &middot; Mon, 15 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.thehindu.com/news/international/russia-ukraine-war-missile-drone-attack-on-kyiv-lavra-monastery-june-15-2026/article71103897.ece" target="_blank" rel="noopener">Russia Fires 70 Missiles and 611 Drones at Ukraine, Killing 11</a></h3>
+  <p class="card-summary">Russia launched one of its largest combined missile-and-drone strikes on Ukraine, concentrating the barrage on Kyiv. Ukrainian air defences intercepted 50 missiles and 582 drones, but the attack killed 11 people and damaged a sacred landmark.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-27" style="border-color:#8b1a1a; color:#8b1a1a">See Impact</button>
+    <span class="level-pill" style="color:#8b1a1a">HIGH IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-27">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#8b1a1a">HIGH IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Kyiv Residents</span></div><div class="bullet-effect">A concentrated overnight barrage on the capital killed civilians and damaged urban infrastructure, worsening the humanitarian crisis in the city.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Ukrainian Cultural and Religious Heritage</span></div><div class="bullet-effect">A sacred landmark sustained damage in the strike, threatening irreplaceable historical and spiritual assets that cannot be fully restored.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Ukrainian Air Defence Forces</span></div><div class="bullet-effect">Intercepting 50 missiles and 582 drones in a single night signals acute strain on munitions stockpiles and crew capacity at the same time.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">European Governments and NATO</span></div><div class="bullet-effect">An attack of this scale and density intensifies allied pressure to accelerate air-defence system deliveries and tighten co-ordinated military support for Kyiv.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="fintech" data-tabs="fintech" data-id="story-30">
+  <div class="tag-row"><span class="sec-tag" style="background:#6b2a8b">Fintech</span></div>
+  <div class="source-line" style="color:#1a5c3a">MINT &middot; Tue, 16 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.livemint.com/news/us-news/newsom-accuses-trump-of-targeting-him-for-2028-run-they-are-simply-trying-to-find-a-crime-11781554406095.html" target="_blank" rel="noopener">Newsom Says Trump Using Federal Probe to Neutralise 2028 Rival</a></h3>
+  <p class="card-summary">California Governor Gavin Newsom has accused the Trump administration of deploying federal agents in a politically motivated investigation targeting him, his family, and his professional network. Newsom contends the probe is designed to eliminate him as a credible Democratic contender for the 2028 presidential race.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-30" style="border-color:#c47a1a; color:#c47a1a">See Impact</button>
+    <span class="level-pill" style="color:#c47a1a">MEDIUM IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-30">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#c47a1a">MEDIUM IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Democratic 2028 Presidential Field</span></div><div class="bullet-effect">Targeting the leading opposition contender with a federal probe chills other potential challengers and narrows the Democratic primary field under duress.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">US Federal Law Enforcement Institutions</span></div><div class="bullet-effect">DOJ and FBI credibility takes structural damage if a sitting president is seen directing investigative resources at a named electoral rival.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Newsom&#x27;s Personal and Professional Circle</span></div><div class="bullet-effect">Friends, former employees, and family members face direct federal scrutiny and record requests, inflicting reputational and legal costs on private individuals.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="fintech" data-tabs="fintech" data-id="story-31">
+  <div class="tag-row"><span class="sec-tag" style="background:#6b2a8b">Fintech</span></div>
+  <div class="source-line" style="color:#1a5c3a">MINT &middot; Mon, 15 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.livemint.com/money/personal-finance/realtime-lending-why-modern-digital-infrastructure-is-the-future-of-credit-11781510282734.html" target="_blank" rel="noopener">Lending Industry Shifts to Real-Time Digital Infrastructure for Speed</a></h3>
+  <p class="card-summary">India&#x27;s lending sector is moving toward real-time API-driven platforms that give lenders instant access to borrower financial data. The shift aims to cut approval times, tighten risk assessment, and raise the bar on data security.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-31" style="border-color:#c47a1a; color:#c47a1a">See Impact</button>
+    <span class="level-pill" style="color:#c47a1a">MEDIUM IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-31">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#c47a1a">MEDIUM IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Retail Borrowers</span></div><div class="bullet-effect">Real-time data pipelines compress loan approvals from days to minutes, widening credit access for time-sensitive needs.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">Traditional Banks &amp; NBFCs</span></div><div class="bullet-effect">Legacy lenders face mounting pressure to overhaul core systems or lose customers to faster, API-native fintech rivals.</div></div><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Fintech Lenders</span></div><div class="bullet-effect">API-first platforms give digital lenders a structural underwriting speed advantage, strengthening their position against incumbent banks.</div></div></div>
+  </div>
+</article>
+
+<article class="story" data-tab="fintech" data-tabs="fintech" data-id="story-32">
+  <div class="tag-row"><span class="sec-tag" style="background:#6b2a8b">Fintech</span></div>
+  <div class="source-line" style="color:#1a5c3a">MINT &middot; Mon, 15 Jun 2026</div>
+  <h3 class="card-headline"><a href="https://www.livemint.com/money/personal-finance/epf-interest-2026-when-will-8-25-interest-be-credited-to-your-account-11781513127237.html" target="_blank" rel="noopener">EPFO Credits 8.25% Annual Interest to Subscriber Accounts</a></h3>
+  <p class="card-summary">EPFO is in the process of crediting 8.25% annual interest for 2025-26 to member provident fund accounts. Subscribers can verify the credit by logging into the EPFO passbook portal using their Universal Account Number.</p>
+  <div class="card-foot">
+    <button class="impact-toggle" data-target="impact-story-32" style="border-color:#c47a1a; color:#c47a1a">See Impact</button>
+    <span class="level-pill" style="color:#c47a1a">MEDIUM IMPACT</span>
+  </div>
+  <div class="impact-panel" id="impact-story-32">
+    <div class="impact-head">
+      <span class="impact-label">IMPACT ANALYSIS</span>
+      <span class="impact-level" style="color:#c47a1a">MEDIUM IMPACT</span>
+    </div>
+    <div class="bullets"><div class="bullet" style="background:#e8f5e9"><div class="bullet-head"><span class="bullet-icon" style="color:#1a5c3a">▲</span><span class="bullet-who" style="color:#1a5c3a">Salaried Formal-Sector Employees</span></div><div class="bullet-effect">Over 70 million active EPF members will see 8.25% interest added to their balances, compounding their tax-exempt retirement corpus.</div></div><div class="bullet" style="background:#f5f0e8"><div class="bullet-head"><span class="bullet-icon" style="color:#6b5c44">◆</span><span class="bullet-who" style="color:#6b5c44">Near-Retirement EPF Subscribers</span></div><div class="bullet-effect">Employees planning imminent withdrawal or transfer need to confirm credit before initiating claims to avoid processing delays on incorrect balances.</div></div><div class="bullet" style="background:#fdecea"><div class="bullet-head"><span class="bullet-icon" style="color:#8b1a1a">▼</span><span class="bullet-who" style="color:#8b1a1a">EPFO Passbook Portal</span></div><div class="bullet-effect">Login traffic will spike sharply as millions of subscribers simultaneously verify credits, straining the UAN-based portal&#x27;s uptime and responsiveness.</div></div></div>
+  </div>
+</article>
+</div></section>
+<section class="story-section" data-section="events" id="sec-events">
+  <h2 class="sec-head">Mumbai Events &amp; Outings</h2>
+  <div class="events-grid">
+<div class="event-card">
+  <div class="ev-stripe" style="background:#1a3a5c">
+    <span class="ev-cat">THEATRE</span>
+    <span class="ev-urgency" style="background:#8b1a1a">Book Now</span>
+  </div>
+  <div class="ev-body">
+    <div class="ev-title">CATS — The Musical (India Premiere)</div>
+    <div class="ev-meta">
+      <span>📍 The Grand Theatre, NMACC, Jio World Centre, BKC</span>
+      <span>📅 June 17-28, 2026</span>
+      <span>🕐 7:30 PM (matinées on weekends — check NMACC website)</span>
+    </div>
+    <div class="ev-row">
+      <span class="ev-stars" title="4.9/5"><span class="star-glyphs">★★★★★</span><span class="star-num">4.9</span></span>
+      <span class="ev-crowd"><span class="crowd-label">CROWD</span><span class="crowd-bar"><span class="crowd-fill" style="width:75%;background:#8b1a1a"></span></span><span class="crowd-text" style="color:#8b1a1a">Busy</span></span>
+    </div>
+    <div class="ev-pricing">
+      <span class="ev-price">💰 Rs 2,000 onwards</span>
+      <span class="ev-source">via BookMyShow / NMACC</span>
+    </div>
+    <div class="ev-desc">Andrew Lloyd Webber&#x27;s legendary seven-time Tony Award-winning musical makes its long-awaited India debut at NMACC&#x27;s Grand Theatre, presented with GWB Entertainment. The production features Gillian Lynne&#x27;s Olivier Award-winning choreography and John Napier&#x27;s iconic oversized junkyard set design.</div>
+    <div class="ev-tags"><span class="ev-tag">Broadway</span><span class="ev-tag">India Premiere</span><span class="ev-tag">BKC</span></div>
+    <div class="ev-planner" id="ev-plan-0"><div class="ev-planner-label">PLANNER&apos;S NOTE</div><div>This 12-day Mumbai run is the only Indian engagement — book Premium or Platinum seats immediately. NMACC&#x27;s Grand Theatre is a prestige venue; pair with dinner at the curated Jio World Centre restaurant precinct (Nara, Namak) for a complete evening. Valet parking available at BKC; cocktail or smart-casual attire appropriate.</div></div>
+    <div class="ev-foot">
+      <button class="ev-toggle" data-target="ev-plan-0" style="border-color:#1a3a5c;color:#1a3a5c">💡 Planner&apos;s Note</button>
+      <a class="ev-link" href="https://www.nmacc.com/performing-arts/cats-by-andrew-lloyd-webber/" target="_blank" rel="noopener">View &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<div class="event-card">
+  <div class="ev-stripe" style="background:#c47a1a">
+    <span class="ev-cat">COMEDY</span>
+    <span class="ev-urgency" style="background:#8b1a1a">Book Now</span>
+  </div>
+  <div class="ev-body">
+    <div class="ev-title">Papa Yaar — Zakir Khan Live (Stadium Edition)</div>
+    <div class="ev-meta">
+      <span>📍 NSCI Dome, SVP Stadium, Worli</span>
+      <span>📅 June 13-14, 2026</span>
+      <span>🕐 8:00 PM</span>
+    </div>
+    <div class="ev-row">
+      <span class="ev-stars" title="4.7/5"><span class="star-glyphs">★★★★★</span><span class="star-num">4.7</span></span>
+      <span class="ev-crowd"><span class="crowd-label">CROWD</span><span class="crowd-bar"><span class="crowd-fill" style="width:75%;background:#8b1a1a"></span></span><span class="crowd-text" style="color:#8b1a1a">Busy</span></span>
+    </div>
+    <div class="ev-pricing">
+      <span class="ev-price">💰 Rs 999 - Rs 6,499</span>
+      <span class="ev-source">via BookMyShow</span>
+    </div>
+    <div class="ev-desc">Zakir Khan brings his record-breaking &#x27;Papa Yaar&#x27; national tour to a landmark stadium finale in Mumbai — his first-ever stadium-scale stand-up show in the city, before his publicly announced 5-year hiatus from live performance.</div>
+    <div class="ev-tags"><span class="ev-tag">Stand-up Comedy</span><span class="ev-tag">Stadium Show</span><span class="ev-tag">Worli</span></div>
+    <div class="ev-planner" id="ev-plan-1"><div class="ev-planner-label">PLANNER&apos;S NOTE</div><div>Premium and Platinum tickets (Rs 4,500+) include dedicated entry lanes and superior sightlines at the NSCI Dome. An ideal client entertainment pick — Zakir&#x27;s warm observational humour on middle-class Indian life is universally relatable and politically neutral. Both nights are expected to sell out; book immediately. Pre-show drinks at Worli Sea Face restaurants work well.</div></div>
+    <div class="ev-foot">
+      <button class="ev-toggle" data-target="ev-plan-1" style="border-color:#c47a1a;color:#c47a1a">💡 Planner&apos;s Note</button>
+      <a class="ev-link" href="https://domeindia.com/papa-yaar-by-zakir-khan-mumbai/" target="_blank" rel="noopener">View &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<div class="event-card">
+  <div class="ev-stripe" style="background:#8b1a1a">
+    <span class="ev-cat">CONCERT</span>
+    <span class="ev-urgency" style="background:#c47a1a">Filling Fast</span>
+  </div>
+  <div class="ev-body">
+    <div class="ev-title">Anandam — The Symphony of Devotion</div>
+    <div class="ev-meta">
+      <span>📍 Jio World Convention Centre, BKC</span>
+      <span>📅 June 27, 2026</span>
+      <span>🕐 7:00 PM (Gates open 5:00 PM)</span>
+    </div>
+    <div class="ev-row">
+      <span class="ev-stars" title="4.5/5"><span class="star-glyphs">★★★★☆</span><span class="star-num">4.5</span></span>
+      <span class="ev-crowd"><span class="crowd-label">CROWD</span><span class="crowd-bar"><span class="crowd-fill" style="width:75%;background:#8b1a1a"></span></span><span class="crowd-text" style="color:#8b1a1a">Busy</span></span>
+    </div>
+    <div class="ev-pricing">
+      <span class="ev-price">💰 Rs 3,799 onwards</span>
+      <span class="ev-source">via District (Zomato)</span>
+    </div>
+    <div class="ev-desc">India&#x27;s first immersive Bhakti music spectacle, featuring Shankar Mahadevan, Sonu Nigam, Shaan, Siddharth Mahadevan and others, presented by DreamSetGo with Jio Creative Labs. The four-hour experience blends devotional music with cinematic visuals and large-scale multi-sensory production design.</div>
+    <div class="ev-tags"><span class="ev-tag">Bhakti Music</span><span class="ev-tag">Shankar Mahadevan</span><span class="ev-tag">BKC</span></div>
+    <div class="ev-planner" id="ev-plan-2"><div class="ev-planner-label">PLANNER&apos;S NOTE</div><div>Gates open at 5 PM — use the two-hour window for relaxed client conversation in the JWCC lobby before the arena fills. Higher-tier seats ensure reserved positions in an otherwise general-admission setup. Saturday evening smart-ethnic or business-casual dress fits the devotional ambience. Ideal for multigenerational client groups.</div></div>
+    <div class="ev-foot">
+      <button class="ev-toggle" data-target="ev-plan-2" style="border-color:#8b1a1a;color:#8b1a1a">💡 Planner&apos;s Note</button>
+      <a class="ev-link" href="https://www.district.in/events/anandam-the-symphony-of-devotion-mumbai-jun-2026-buy-tickets" target="_blank" rel="noopener">View &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<div class="event-card">
+  <div class="ev-stripe" style="background:#c47a1a">
+    <span class="ev-cat">COMEDY</span>
+    <span class="ev-urgency" style="background:#8b1a1a">Book Now</span>
+  </div>
+  <div class="ev-body">
+    <div class="ev-title">TOXIC — Abhishek Upmanyu Live at NCPA</div>
+    <div class="ev-meta">
+      <span>📍 Tata Theatre, NCPA, Nariman Point</span>
+      <span>📅 June 27, 2026</span>
+      <span>🕐 8:00 PM</span>
+    </div>
+    <div class="ev-row">
+      <span class="ev-stars" title="4.5/5"><span class="star-glyphs">★★★★☆</span><span class="star-num">4.5</span></span>
+      <span class="ev-crowd"><span class="crowd-label">CROWD</span><span class="crowd-bar"><span class="crowd-fill" style="width:75%;background:#8b1a1a"></span></span><span class="crowd-text" style="color:#8b1a1a">Busy</span></span>
+    </div>
+    <div class="ev-pricing">
+      <span class="ev-price">💰 Rs 999 - Rs 2,499</span>
+      <span class="ev-source">via NCPA</span>
+    </div>
+    <div class="ev-desc">One of India&#x27;s most celebrated stand-up comedians performs his latest hour at NCPA&#x27;s Tata Theatre, delivering sharp and disarming observational humour on relationships, technology, and the shared absurdities of Indian urban life.</div>
+    <div class="ev-tags"><span class="ev-tag">Stand-up Comedy</span><span class="ev-tag">NCPA</span><span class="ev-tag">Nariman Point</span></div>
+    <div class="ev-planner" id="ev-plan-3"><div class="ev-planner-label">PLANNER&apos;S NOTE</div><div>NCPA&#x27;s intimate Tata Theatre (under 1,100 seats) guarantees clean sightlines from any zone — book Stalls or Front Circle. Pre-show dinner at Harbour Bar at the Taj Mahal Palace Hotel or Trident Nariman Point&#x27;s Oyster Bar pairs beautifully. Nariman Point valet parking is straightforward; the NCPA address itself is a signal of cultural discernment.</div></div>
+    <div class="ev-foot">
+      <button class="ev-toggle" data-target="ev-plan-3" style="border-color:#c47a1a;color:#c47a1a">💡 Planner&apos;s Note</button>
+      <a class="ev-link" href="https://www.ncpamumbai.com/event/toxic-abhishek-upmanyu-live/" target="_blank" rel="noopener">View &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<div class="event-card">
+  <div class="ev-stripe" style="background:#1a3a5c">
+    <span class="ev-cat">CLASSICAL MUSIC</span>
+    <span class="ev-urgency" style="background:#1a5c3a">Available</span>
+  </div>
+  <div class="ev-body">
+    <div class="ev-title">Candlelight India: Tribute to Mohammed Rafi</div>
+    <div class="ev-meta">
+      <span>📍 Royal Opera House, Girgaum</span>
+      <span>📅 June 27, 2026</span>
+      <span>🕐 6:00 PM</span>
+    </div>
+    <div class="ev-row">
+      <span class="ev-stars" title="4.6/5"><span class="star-glyphs">★★★★★</span><span class="star-num">4.6</span></span>
+      <span class="ev-crowd"><span class="crowd-label">CROWD</span><span class="crowd-bar"><span class="crowd-fill" style="width:50%;background:#c47a1a"></span></span><span class="crowd-text" style="color:#c47a1a">Moderate</span></span>
+    </div>
+    <div class="ev-pricing">
+      <span class="ev-price">💰 Rs 899 - Rs 9,999</span>
+      <span class="ev-source">via Royal Opera House Mumbai</span>
+    </div>
+    <div class="ev-desc">An atmospheric 60-minute Candlelight concert at Mumbai&#x27;s magnificently restored 1916 heritage Royal Opera House, featuring western string quartets reimagining the immortal melodies of Mohammed Rafi in a setting of hundreds of candles.</div>
+    <div class="ev-tags"><span class="ev-tag">Candlelight Concert</span><span class="ev-tag">Heritage Venue</span><span class="ev-tag">Girgaum</span></div>
+    <div class="ev-planner" id="ev-plan-4"><div class="ev-planner-label">PLANNER&apos;S NOTE</div><div>Box Seats (Rs 6,999–Rs 9,999 for 2–3 guests) offer a discreet, elegant setting ideal for senior client entertainment inside one of India&#x27;s finest heritage venues. Doors open 30 minutes before curtain and close strictly 5 minutes prior — plan accordingly. Combine with dinner at The Table (Fort) or SodaBottleOpenerWala (BKC) for a curated evening. Cocktail attire is fitting.</div></div>
+    <div class="ev-foot">
+      <button class="ev-toggle" data-target="ev-plan-4" style="border-color:#1a3a5c;color:#1a3a5c">💡 Planner&apos;s Note</button>
+      <a class="ev-link" href="https://www.royaloperahouse.in/upcoming-shows/" target="_blank" rel="noopener">View &rarr;</a>
+    </div>
+  </div>
+</div>
+</div>
+  <div class="events-legend">
+    <strong>How to read:</strong> ★ Rating reflects editorial estimate based on lineup &amp; past editions.
+    🔥 Book Now = sells out fast. ⚡ Filling Fast = limited seats. ✅ Available = comfortable booking window.
+  </div>
+</section>
+
+  </main>
+
+  <footer>The Mumbai Daily</footer>
+</div>
+
+<script>
+  // Print mode: ?print=1 keeps everything expanded for PDF rendering
+  var IS_PRINT = location.search.indexOf('print=1') !== -1;
+  if (!IS_PRINT) {
+    document.querySelectorAll('.impact-panel').forEach(p => p.hidden = true);
+    document.querySelectorAll('.ev-planner').forEach(p => p.hidden = true);
+  }
+
+  var btt = document.getElementById('back-to-top');
+  window.addEventListener('scroll', function() {
+    btt.style.display = window.scrollY > 300 ? 'block' : 'none';
+  });
+  btt.addEventListener('click', function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const target = document.querySelector(btn.getAttribute('href'));
+      if (target) {
+        const offset = 60;
+        const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({top: y, behavior: 'smooth'});
+      }
+    });
+  });
+
+  document.querySelectorAll('.impact-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panel = document.getElementById(btn.dataset.target);
+      const open = !panel.hidden;
+      panel.hidden = open;
+      btn.textContent = open ? 'See Impact' : 'Hide Impact';
+      btn.classList.toggle('open', !open);
+    });
+  });
+
+  document.querySelectorAll('.ev-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panel = document.getElementById(btn.dataset.target);
+      const open = !panel.hidden;
+      panel.hidden = open;
+      btn.textContent = open ? "💡 Planner's Note" : "✕ Close";
+      btn.classList.toggle('open', !open);
+    });
+  });
+</script>
+</body></html>
